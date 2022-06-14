@@ -1,0 +1,7 @@
+project: oxipng
+target: optimize
+
+cmds:
+  - cmd: /optimize
+  - cmd: /optimize_no_inst @@
+    libfuzzer: false
