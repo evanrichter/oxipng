@@ -1,0 +1,26 @@
+[package]
+name = "oxipng-fuzz"
+version = "0.0.0"
+authors = ["Automatically generated"]
+publish = false
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+rayon = "*"
+
+[dependencies.oxipng]
+path = ".."
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "optimize"
+path = "fuzz_targets/optimize.rs"
+test = false
+doc = false
